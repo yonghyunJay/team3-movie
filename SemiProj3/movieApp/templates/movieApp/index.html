@@ -16,6 +16,8 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href='{% static "css/styles.css" %}' rel="stylesheet" />
+        <!-- easySelectable CSS-->
+        <link href='{% static "css/easySelectable.css" %}' rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -24,7 +26,8 @@
                 <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src='{% static "assets/img/navbar-logo.svg" %}' /></a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#page-top">Home</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li> -->
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
@@ -38,11 +41,11 @@
             <div class="container">
                 <div class="masthead-subheading">Welcome To Our Studio!</div>
                 <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#portfolio">Tell Me More</a>
             </div>
         </header>
         <!-- Services-->
-        <section class="page-section" id="services">
+        <!-- <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Services</h2>
@@ -66,7 +69,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Portfolio Grid-->
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
@@ -74,92 +77,18 @@
                     <h2 class="section-heading text-uppercase">Portfolio</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1"
-                                ><div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src='{% static "assets/img/portfolio/01-thumbnail.jpg" %}' alt=""
-                            /></a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Threads</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2"
-                                ><div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src='{% static "assets/img/portfolio/02-thumbnail.jpg" %}' alt=""
-                            /></a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Explore</div>
-                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3"
-                                ><div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src='{% static "assets/img/portfolio/03-thumbnail.jpg" %}' alt=""
-                            /></a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Finish</div>
-                                <div class="portfolio-caption-subheading text-muted">Identity</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4"
-                                ><div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src='{% static "assets/img/portfolio/04-thumbnail.jpg" %}' alt=""
-                            /></a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Lines</div>
-                                <div class="portfolio-caption-subheading text-muted">Branding</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5"
-                                ><div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src='{% static "assets/img/portfolio/05-thumbnail.jpg" %}' alt=""
-                            /></a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Southwest</div>
-                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6"
-                                ><div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src='{% static "assets/img/portfolio/06-thumbnail.jpg" %}' alt=""
-                            /></a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
-                            </div>
-                        </div>
-                    </div>
+                <ul id="easySelectable">
+                    <li><img class="img-fluid" src="" alt=""/></li>
+                    <li><img class="img-fluid" src="" alt=""/></li>
+                    <li><img class="img-fluid" src="" alt=""/></li>
+                    <li><img class="img-fluid" src="" alt=""/></li>
+                    <li><i class="fas fa-redo fa-3x"></i><br>이 중에 없음</li>
+                </ul>
+                <div class="text-center">
+                    <a class="btn btn-primary btn-xl portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                        Recommend me!!</a>
                 </div>
+                
             </div>
         </section>
         <!-- About-->
@@ -334,151 +263,62 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project Details Go Here-->
+
+
+
+
+
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src='{% static "assets/img/portfolio/01-full.jpg" %}' alt="" />
+                                    
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-6 mb-4">
+                                            <div class="portfolio-item">
+                                                <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=134963" target="_blank">
+                                                    <img class="img-fluid" src='{% static "assets/img/portfolio/07-thumbnail.png" %}' alt=""/>
+                                                </a>
+                                                <ul class="list-inline">
+                                                    <li>라라랜드</li>
+                                                    <li>드라마, 뮤지컬, 멜로/로맨스</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6 mb-4">
+                                            <div class="portfolio-item">
+                                                <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=134963" target="_blank">
+                                                    <img class="img-fluid" src='{% static "assets/img/portfolio/07-thumbnail.png" %}' alt=""/>
+                                                </a>
+                                                <ul class="list-inline">
+                                                    <li>라라랜드</li>
+                                                    <li>드라마, 뮤지컬, 멜로/로맨스</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6 mb-4">
+                                            <div class="portfolio-item">
+                                                <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=134963" target="_blank">
+                                                    <img class="img-fluid" src='{% static "assets/img/portfolio/07-thumbnail.png" %}' alt=""/>
+                                                </a>
+                                                <ul class="list-inline">
+                                                    <li>라라랜드</li>
+                                                    <li>드라마, 뮤지컬, 멜로/로맨스</li>
+                                                </ul>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+
                                     <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                                     <ul class="list-inline">
                                         <li>Date: January 2020</li>
                                         <li>Client: Threads</li>
                                         <li>Category: Illustration</li>
                                     </ul>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fas fa-times mr-1"></i>Close Project</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src='{% static "assets/img/close-icon.svg" %}' /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src='{% static "assets/img/portfolio/02-full.jpg" %}' alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Explore</li>
-                                        <li>Category: Graphic Design</li>
-                                    </ul>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fas fa-times mr-1"></i>Close Project</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src='{% static "assets/img/close-icon.svg" %}' /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src='{% static "assets/img/portfolio/03-full.jpg" %}' alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Finish</li>
-                                        <li>Category: Identity</li>
-                                    </ul>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fas fa-times mr-1"></i>Close Project</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal 4-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src='{% static "assets/img/close-icon.svg" %}' /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src='{% static "assets/img/portfolio/04-full.jpg" %}' alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Lines</li>
-                                        <li>Category: Branding</li>
-                                    </ul>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fas fa-times mr-1"></i>Close Project</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal 5-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src='{% static "assets/img/close-icon.svg" %}' /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src='{% static "assets/img/portfolio/05-full.jpg" %}' alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Southwest</li>
-                                        <li>Category: Website Design</li>
-                                    </ul>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fas fa-times mr-1"></i>Close Project</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal 6-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src='{% static "assets/img/close-icon.svg" %}' /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src='{% static "assets/img/portfolio/06-full.jpg" %}' alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Window</li>
-                                        <li>Category: Photography</li>
-                                    </ul>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fas fa-times mr-1"></i>Close Project</button>
+
+
+
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -496,5 +336,51 @@
         <script src='{% static "assets/mail/contact_me.js" %}'></script>
         <!-- Core theme JS-->
         <script src='{% static "js/scripts.js" %}'></script>
+        <!-- easySelectable JS-->
+        <script src='{% static "js/easySelectable.js" %}'></script>
+    
+        <script>
+            $(function(){
+                $('#easySelectable').easySelectable();
+            })
+    
+            // 새로고침 버튼
+            $('#easySelectable > li:nth-last-child(1)').click(function() {
+                location.reload();
+                //$('#easySelectable').load(window.location.href + ' #easySelectable');
+            });
+    
+            // Array의 prototype을 지정해주고, shuffle이라는 이름을 가진 함수를 생성
+            Array.prototype.shuffle = function () {
+                var length = this.length;
+                // 아래에서 length 후위 감소 연산자를 사용하면서 결국 0이된다.
+                // 프로그래밍에서 0은 false를 의미하기에 0이되면 종료.
+                while (length) {
+                    var index = Math.floor((length--) * Math.random()); // 랜덤한 배열 index 추출
+                    var temp = this[length]; // 배열의 끝에서부터 0번째 아이템을 순차적으로 대입
+                    this[length] = this[index]; // 랜덤한 위치의 값을 맨뒤(this[length])부터 셋팅
+                    this[index] = temp; // 랜덤한 위치에 위에 설정한 temp값 셋팅
+                }
+                return this;
+            };
+    
+            // 이미지 링크 배열 생성
+            var img_link = new Array();
+            img_link[0] = '{% static "assets/img/portfolio/07-thumbnail.png" %}'
+            img_link[1] = '{% static "assets/img/portfolio/08-thumbnail.png" %}'
+            img_link[2] = '{% static "assets/img/portfolio/09-thumbnail.png" %}'
+            img_link[3] = '{% static "assets/img/portfolio/10-thumbnail.png" %}'
+            img_link.shuffle();
+    
+            // 이미지 링크 셔플
+            for(var i=0; i<img_link.length; i++) {
+                text1 = "#easySelectable > li:nth-child(";
+                text2 = String(Number(i)+1);
+                text3 = ") > img";
+                var selector_text = text1.concat(" ", text2," ", text3);
+                document.querySelector(selector_text).src = img_link[i]
+            };
+    
+        </script>
     </body>
 </html>
