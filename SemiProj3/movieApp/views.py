@@ -5,8 +5,6 @@ from django.http import HttpResponse
 from django.template import loader
 from movieApp.templates.movieApp.juhyun.word2vec import word2vecFn
  
-# from movieApp.templates.juhyun import word2vecFn
-
 def index(request):
     template = loader.get_template('movieApp/index.html')
     context = {
