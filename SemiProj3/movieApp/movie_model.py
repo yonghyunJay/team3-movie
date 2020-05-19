@@ -69,7 +69,7 @@ def word2vecFn(m_list):
     similar_list = []
     title_list = []
 
-    for i in range(10):
+    for i in range(9):
         r_id = result_list[0][i][0][0]
         r_s = result_list[0][i][0][1]
         r_title = result_list[0][i][1]
@@ -89,8 +89,8 @@ def word2vecFn(m_list):
     #predic_data.to_csv('predic_data.csv', index=0)
 
     #     print(result_list[0][1])    
-    result_title = predic_data[:10]['title']
-    result_similar = predic_data[:10]['similar']
+    result_title = predic_data[:5]['title']
+    result_similar = predic_data[:5]['similar']
     result_similar = round((result_similar), 3)
 
     print(result_title, result_similar)
@@ -99,7 +99,7 @@ def word2vecFn(m_list):
 
     return res
 
-def recommend_movies(df_svd_preds, user_id, ori_movies_df, ori_ratings_df, num_recommendations=10):
+def recommend_movies(df_svd_preds, user_id, ori_movies_df, ori_ratings_df, num_recommendations=5):
     
     #현재는 index로 적용이 되어있으므로 user_id - 1을 해야함.
     user_row_number = user_id - 1 
@@ -154,7 +154,7 @@ def MFSVDFn(var_title):
     svd_user_predicted_ratings = np.dot(np.dot(U,sigma),Vt) + user_ratings_mean.reshape(-1,1)
     df_svd_preds = pd.DataFrame(svd_user_predicted_ratings,columns=ratings_movies.columns)
     
-    already_rated, predictions = recommend_movies(df_svd_preds,2, movies, ratings,10)
+    already_rated, predictions = recommend_movies(df_svd_preds,2, movies, ratings,5)
     
     return predictions.loc[:,'title'].tolist()
 

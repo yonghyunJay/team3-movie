@@ -241,7 +241,7 @@ def KNNFn(movie_name_):
     
     # 랜덤 10개
     random.shuffle(total_title)
-    for i in range(0, 10):
+    for i in range(0, 5):
         ran.append(total_title[i])
     print('ran::', ran)
     # 함수 
