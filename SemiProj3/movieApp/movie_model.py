@@ -1,4 +1,3 @@
-
 import os
 import pandas as pd
 import numpy as np
@@ -15,6 +14,8 @@ def word2vecFn(m_list):
 
     data = pd.read_csv(settings.MOVIELIST_USER_FILE_PATH)
     df_items = pd.read_csv(settings.MOVIES_FILE_PATH)
+
+    df_items = df_items[['movieId', 'title', 'genres']]
 
     # 사용자한테 영화명을3개 받을것
     # 영화명이 들어오면 영화아이디로
@@ -37,9 +38,9 @@ def word2vecFn(m_list):
 
     # ========== word2vec 계산 ========== #
 
-    word_vectors = model.wv
-    vocabs = word_vectors.vocab.keys()
-    word_vectors_list = [word_vectors[v] for v in vocabs]
+    # word_vectors = model.wv
+    # vocabs = word_vectors.vocab.keys()
+    # word_vectors_list = [word_vectors[v] for v in vocabs]
 
     # 세번을 반복한다
     # 저장된 결과를 받는곳
@@ -58,8 +59,8 @@ def word2vecFn(m_list):
 
     for i in range(len(m_id_list)):
         predictions = most_similar(str(m_id_list[i]))
+        print(predictions)
         result_list.append(predictions)
-
 
 
     # ========== 출력값 후처리 ========== #

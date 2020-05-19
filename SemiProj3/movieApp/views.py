@@ -15,7 +15,7 @@ def index(request):
         'latest_question_list': "test",
     }
     #return HttpResponse(template.render(context, request))
-    res_dict = random_poster_urls(10)
+    res_dict = random_poster_urls(True, 9)
     return render(request, 'movieApp/index.html', {'res_dict' : res_dict})
 
 def get_recommend_movies_1(request):
