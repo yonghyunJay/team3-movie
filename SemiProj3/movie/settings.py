@@ -120,3 +120,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MOVIE_URL_FILE_PATH = os.path.join(BASE_DIR, 'movieApp/static/data/movie_url.csv')
+MOVIELIST_USER_FILE_PATH = os.path.join(BASE_DIR, 'movieApp/static/data/movieList_users.csv')
+MOVIES_FILE_PATH = os.path.join(BASE_DIR, 'movieApp/static/data/movies.csv')
+W2D_MODEL_FILE_PATH = os.path.join(BASE_DIR, 'movieApp/static/data/word2vec.model')
+RATINGS_FILE_PATH = os.path.join(BASE_DIR, 'movieApp/static/data/ratings.csv')

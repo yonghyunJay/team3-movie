@@ -1,4 +1,5 @@
 {% load static %}
+{% block content%}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -78,27 +79,24 @@
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <ul id="easySelectable">
-                    <!-- <li><img class="img-fluid" src="" alt=""/></li>
-                    <li><img class="img-fluid" src="" alt=""/></li>
-                    <li><img class="img-fluid" src="" alt=""/></li>
-                    <li><img class="img-fluid" src="" alt=""/></li>
-                    <li><img class="img-fluid" src="" alt=""/></li>
-                    <li><img class="img-fluid" src="" alt=""/></li>
-                    <li><img class="img-fluid" src="" alt=""/></li>
-                    <li><img class="img-fluid" src="" alt=""/></li>
-                    <li><img class="img-fluid" src="" alt=""/></li>
-                    <li><i class="fas fa-redo fa-3x"></i><br>이 중에 없음</li> -->
+                    {% for res in res_dict.values %}
+                        <li><img class="img-fluid" src="{{res.img_url}}" name="{{res.name}}" alt=""/></li>
+                    {% endfor %}
+                    <li><i class="fas fa-redo fa-3x"></i><br>이 중에 없음</li>
                 </ul>
                 <div class="text-center">
+                    <!-- <a class="btn btn-primary btn-xl portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                        Recommend me!!</a> -->
                     <a class="btn btn-primary btn-xl portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                        recommend me!!
-                    </a>
+                        Word2Vec</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-primary btn-xl portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                        MF-SVD</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-primary btn-xl portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                        KNN</a>
+
                 </div>
-
-
             </div>
         </section>
-        
         <!-- About-->
         <section class="page-section" id="about">
             <div class="container">
@@ -279,19 +277,7 @@
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     
-                                    <div class="row">
-                                        <div class="col-lg-4 col-sm-6 mb-4">
-                                            <div class="portfolio-item">
-                                                <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=134963" target="_blank">
-                                                    <!-- <img class="img-fluid" src='{% static "assets/img/portfolio/07-thumbnail.png" %}' alt=""/> -->
-                                                    <img class="img-fluid" src='https://movie-phinf.pstatic.net/20161123_188/1479862185516tYkKO_JPEG/movie_image.jpg' alt=""/>
-                                                </a>
-                                                <ul class="list-inline">
-                                                    <li>라라랜드</li>
-                                                    <li>드라마, 뮤지컬, 멜로/로맨스</li>
-                                                </ul>
-                                            </div>
-                                        </div>                                       
+                                    <div class="row" id="recommend-movies">                                                        
                                     </div>
                                     <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                                     <ul class="list-inline">
@@ -330,58 +316,120 @@
                 $('#easySelectable').easySelectable();
             })
     
-            
-    
-            // Array의 prototype을 지정해주고, shuffle이라는 이름을 가진 함수를 생성
-            Array.prototype.shuffle = function () {
-                var length = this.length;
-                // 아래에서 length 후위 감소 연산자를 사용하면서 결국 0이된다.
-                // 프로그래밍에서 0은 false를 의미하기에 0이되면 종료.
-                while (length) {
-                    var index = Math.floor((length--) * Math.random()); // 랜덤한 배열 index 추출
-                    var temp = this[length]; // 배열의 끝에서부터 0번째 아이템을 순차적으로 대입
-                    this[length] = this[index]; // 랜덤한 위치의 값을 맨뒤(this[length])부터 셋팅
-                    this[index] = temp; // 랜덤한 위치에 위에 설정한 temp값 셋팅
-                }
-                return this;
-            };
-    
-            // 이미지 링크 배열 생성
-            var img_link = new Array();
-            img_link[0] = 'https://movie-phinf.pstatic.net/20161123_188/1479862185516tYkKO_JPEG/movie_image.jpg?type=m203_290_2';
-            img_link[1] = 'https://movie-phinf.pstatic.net/20200427_139/1587954977691kaCua_JPEG/movie_image.jpg?type=m203_290_2';
-            img_link[2] = 'https://movie-phinf.pstatic.net/20200429_215/15881414327594O6hj_JPEG/movie_image.jpg?type=m203_290_2';
-            img_link[3] = 'https://movie-phinf.pstatic.net/20200513_247/1589358043819bzt8J_JPEG/movie_image.jpg?type=m203_290_2';
-            img_link[4] = 'https://movie-phinf.pstatic.net/20200417_176/1587098239671MiQEL_JPEG/movie_image.jpg?type=m203_290_2';
-            img_link[5] = 'https://movie-phinf.pstatic.net/20200428_196/1588038709486FYyHu_JPEG/movie_image.jpg?type=m203_290_2';
-            img_link[6] = 'https://movie-phinf.pstatic.net/20200410_33/1586494001691vo2PO_JPEG/movie_image.jpg?type=m203_290_2';
-            img_link[7] = 'https://movie-phinf.pstatic.net/20200221_216/1582251798358N3QEz_JPEG/movie_image.jpg?type=m203_290_2';
-            img_link[8] = 'https://movie-phinf.pstatic.net/20200318_287/1584493653014a67Qy_JPEG/movie_image.jpg?type=m203_290_2';
-            img_link[9] = 'https://movie-phinf.pstatic.net/20171019_287/1508374945577O4m9z_JPEG/movie_image.jpg?type=m203_290_2';
-            img_link.shuffle();
-    
-            var temp_tag = '';
-            for(var i=0; i<img_link.length; i++) {
-                temp_tag += '<li><img class="img-fluid" src="" alt=""/></li>';
-            }
-            temp_tag += '<li><i class="fas fa-redo fa-3x"></i><br>이 중에 없음</li>';
-            document.querySelector('#easySelectable').innerHTML = temp_tag;
-
-
-            // 이미지 링크 셔플
-            for(var i=0; i<img_link.length; i++) {
-                text1 = "#easySelectable > li:nth-child(";
-                text2 = String(Number(i)+1);
-                text3 = ") > img";
-                var selector_text = text1.concat(" ", text2," ", text3);
-                document.querySelector(selector_text).src = img_link[i]
-            };
-
             // 새로고침 버튼
             $('#easySelectable > li:nth-last-child(1)').click(function() {
                 location.reload();
             });
-    
+
+            $('#portfolio > div > div:nth-child(3) > a:nth-child(1)').click(function(){
+                var nameList = new Array();
+                var Selected_ul = document.getElementById('easySelectable').getElementsByClassName('es-selected');
+                for(var i=0; i<Selected_ul.length; i++){
+                    nameList[i] = Selected_ul[i].getElementsByTagName('img')[0]['name'];
+                }
+                console.log(nameList);
+
+                $.ajax({
+                    url: "/recommendMovies1/",
+                    type: "POST",
+                    data: {'nameList' : nameList},
+                    headers: {'X-CSRFToken': '{{ csrf_token }}'}, // for csrf token
+                    success: function(data) {
+                        tagHtml = ''
+                        for(var i=0; i<data.name.length; i++) {
+                            console.log(data.name[i]);
+                            console.log(data.naver_url[i]);
+                            console.log(data.poster_url[i]);
+
+                            tagHtml = tagHtml + '<div class="col-lg-4 col-sm-6 mb-4">';
+                            tagHtml = tagHtml + '<div class="portfolio-item">';
+                            tagHtml = tagHtml + '<a href="'+data.naver_url[i]+'" target="_blank">';
+                            tagHtml = tagHtml + '<img class="img-fluid" src="'+data.poster_url[i]+'" alt=""/>';
+                            tagHtml = tagHtml + '</a>';
+                            tagHtml = tagHtml + '<ul class="list-inline">';
+                            tagHtml = tagHtml + '<li>'+data.name[i]+'</li>';
+                            tagHtml = tagHtml + '</ul>';
+                            tagHtml = tagHtml + '</div>';
+                            tagHtml = tagHtml + '</div>';
+                        }
+                        document.getElementById('recommend-movies').innerHTML = tagHtml;
+                        
+                    }});
+            });
+
+            $('#portfolio > div > div:nth-child(3) > a:nth-child(2)').click(function(){
+                var nameList = new Array();
+                var Selected_ul = document.getElementById('easySelectable').getElementsByClassName('es-selected');
+                for(var i=0; i<Selected_ul.length; i++){
+                    nameList[i] = Selected_ul[i].getElementsByTagName('img')[0]['name'];
+                }
+                console.log(nameList);
+
+                $.ajax({
+                    url: "/recommendMovies2/",
+                    type: "POST",
+                    data: {'nameList' : nameList},
+                    headers: {'X-CSRFToken': '{{ csrf_token }}'}, // for csrf token
+                    success: function(data) {
+                        tagHtml = ''
+                        for(var i=0; i<data.name.length; i++) {
+                            console.log(data.name[i]);
+                            console.log(data.naver_url[i]);
+                            console.log(data.poster_url[i]);
+
+                            tagHtml = tagHtml + '<div class="col-lg-4 col-sm-6 mb-4">';
+                            tagHtml = tagHtml + '<div class="portfolio-item">';
+                            tagHtml = tagHtml + '<a href="'+data.naver_url[i]+'" target="_blank">';
+                            tagHtml = tagHtml + '<img class="img-fluid" src="'+data.poster_url[i]+'" alt=""/>';
+                            tagHtml = tagHtml + '</a>';
+                            tagHtml = tagHtml + '<ul class="list-inline">';
+                            tagHtml = tagHtml + '<li>'+data.name[i]+'</li>';
+                            tagHtml = tagHtml + '</ul>';
+                            tagHtml = tagHtml + '</div>';
+                            tagHtml = tagHtml + '</div>';
+                        }
+                        document.getElementById('recommend-movies').innerHTML = tagHtml;
+                        
+                    }});
+            });
+
+            $('#portfolio > div > div:nth-child(3) > a:nth-child(3)').click(function(){
+                var nameList = new Array();
+                var Selected_ul = document.getElementById('easySelectable').getElementsByClassName('es-selected');
+                for(var i=0; i<Selected_ul.length; i++){
+                    nameList[i] = Selected_ul[i].getElementsByTagName('img')[0]['name'];
+                }
+                console.log(nameList);
+
+                $.ajax({
+                    url: "/recommendMovies3/",
+                    type: "POST",
+                    data: {'nameList' : nameList},
+                    headers: {'X-CSRFToken': '{{ csrf_token }}'}, // for csrf token
+                    success: function(data) {
+                        tagHtml = ''
+                        for(var i=0; i<data.name.length; i++) {
+                            console.log(data.name[i]);
+                            console.log(data.naver_url[i]);
+                            console.log(data.poster_url[i]);
+
+                            tagHtml = tagHtml + '<div class="col-lg-4 col-sm-6 mb-4">';
+                            tagHtml = tagHtml + '<div class="portfolio-item">';
+                            tagHtml = tagHtml + '<a href="'+data.naver_url[i]+'" target="_blank">';
+                            tagHtml = tagHtml + '<img class="img-fluid" src="'+data.poster_url[i]+'" alt=""/>';
+                            tagHtml = tagHtml + '</a>';
+                            tagHtml = tagHtml + '<ul class="list-inline">';
+                            tagHtml = tagHtml + '<li>'+data.name[i]+'</li>';
+                            tagHtml = tagHtml + '</ul>';
+                            tagHtml = tagHtml + '</div>';
+                            tagHtml = tagHtml + '</div>';
+                        }
+                        document.getElementById('recommend-movies').innerHTML = tagHtml;
+                        
+                    }});
+            });
+            
         </script>
     </body>
 </html>
+{% endblock content%}
