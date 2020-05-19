@@ -132,8 +132,8 @@ def MFSVDFn(var_title):
     var_userId=ratings['userId'].max()+1
     for temp in var_title:
         var_movieId=movies[movies['title']==temp]['movieId'].values[0]
-        new_data_ratings = {'userId': var_userId,'movieId':var_movieId,'rating':5.0,'timestamp':0}
-        ratings.append(new_data_ratings,ignore_index=True)
+        new_data_ratings = pd.DataFrame({"userId": [var_userId],"movieId":[var_movieId],"rating":[5.0],"timestamp":[0]})
+        ratings=ratings.append(new_data_ratings,ignore_index=True)
         
     #피벗테이블 만들기
     ratings_movies = pd.merge(ratings,movies, on='movieId')
@@ -154,7 +154,7 @@ def MFSVDFn(var_title):
     svd_user_predicted_ratings = np.dot(np.dot(U,sigma),Vt) + user_ratings_mean.reshape(-1,1)
     df_svd_preds = pd.DataFrame(svd_user_predicted_ratings,columns=ratings_movies.columns)
     
-    already_rated, predictions = recommend_movies(df_svd_preds,2, movies, ratings,5)
+    already_rated, predictions = recommend_movies(df_svd_preds, var_userId, movies, ratings,5)
     
     return predictions.loc[:,'title'].tolist()
 
