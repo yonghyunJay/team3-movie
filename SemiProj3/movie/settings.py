@@ -127,4 +127,4 @@ MOVIES_FILE_PATH = os.path.join(BASE_DIR, 'movieApp/static/data/movies.csv')
 W2D_MODEL_FILE_PATH = os.path.join(BASE_DIR, 'movieApp/static/data/word2vec.model')
 RATINGS_FILE_PATH = os.path.join(BASE_DIR, 'movieApp/static/data/ratings.csv')
 
-ALLOWED_HOSTS = ["70.12.227.158"]
+#ALLOWED_HOSTS = ["70.12.227.158"]
